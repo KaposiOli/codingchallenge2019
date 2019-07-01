@@ -1,6 +1,6 @@
 const fs = require('fs');
 const bcrypt = require('bcrypt');
-var users =
+const saltRounds = 10;
 
 fs.readFile('./users-pw-plain.json', 'utf8', (err, jsonString) => {
     if (err) {
@@ -13,4 +13,4 @@ fs.readFile('./users-pw-plain.json', 'utf8', (err, jsonString) => {
     } catch(err) {
         console.log('Error parsing JSON string:', err)
     }
-})
+});
